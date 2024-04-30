@@ -13,17 +13,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIрONS'] = False
 db = SQLAlchemy(app)
 
 
-class Recom(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    Sentiment_rating = db.Column(db.String(100), nullable=False)
-    avg_Ves = db.Column(db.Float, nullable=False)
-    ratio = db.Column(db.Float, nullable=False)
-
-    def __repr__(self):
-        return f'<  name {self.name}>  < Sentiment_rating {self.Sentiment_rating}> ratio < {self.avg_Ves}>'
-
-
 @app.route('/')
 @app.route('/index')
 @app.route('/home')
